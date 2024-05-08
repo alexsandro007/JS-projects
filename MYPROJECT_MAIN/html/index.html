@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#" class="nav__logo">
+          <i class="ri-box-3-fill"></i>
+          <div>Sport<span>News</span></div>
+        </a>
+
+        <div class="nav__menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a
+                href="#home"
+                class="nav__link active-link"
+                data-category="home"
+              >
+                <i class="ri-home-line"></i>
+                <span>Home</span>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#football" class="nav__link" data-category="football">
+                <i class="ri-football-line"></i>
+                <span>Football</span>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a
+                href="#basketball"
+                class="nav__link"
+                data-category="basketball"
+              >
+                <i class="ri-basketball-fill"></i>
+                <span>Basketball</span>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#ufc" class="nav__link" data-category="ufc">
+                <i class="ri-boxing-fill"></i>
+                <span>UFC</span>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#f1" class="nav__link" data-category="f1">
+                <i class="ri-car-fill"></i>
+                <span>F1</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav__actions">
+          <div class="login_user_container" id="login_user">
+            <p class="login_user" id="login_user_name"></p>
+            <i class="ri-logout-box-r-line"></i>
+          </div>
+
+          <i class="ri-user-line login-button" id="login_button"></i>
+        </div>
+      </nav>
+    </header>
+
+    <div class="login grid" id="login-content">
+      <form action="" class="login__form" id="login__form">
+        <h3 class="login__title" id="registration_title">Log in</h3>
+
+        <div class="login__group">
+          <div class="input__field__username" id="username_field">
+            <i class="ri-user-fill"></i>
+            <input
+              type="text"
+              placeholder="Write your name"
+              id="login_name"
+              class="login__input"
+              autocomplete="off"
+              name="username"
+            />
+          </div>
+
+          <div class="input__field" id="email_field">
+            <i class="ri-mail-fill"></i>
+            <input
+              type="email"
+              placeholder="Write your email"
+              id="login_email"
+              class="login__input"
+              autocomplete="off"
+              name="email"
+            />
+          </div>
+
+          <div class="input__field" id="password_field">
+            <i class="ri-lock-fill"></i>
+            <input
+              type="password"
+              placeholder="Enter your password"
+              id="login_pass"
+              class="login__input"
+              autocomplete="off"
+              name="password"
+            />
+          </div>
+        </div>
+
+        <div>
+          <a href="#" class="login__forgot"> Forgot password </a>
+          <p class="login__option" id="login__option">— Or Sign Up —</p>
+          <div class="registration__buttons">
+            <button type="submit" id="loginBtn">Log In</button>
+
+            <button type="submit" class="signup__button" id="signupBtn">
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <i class="ri-close-line login__close" id="login-close"></i>
+    </div>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+      <div class="cards__container" id="cards__container"></div>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer-distributed">
+      <div class="footer-left">
+        <a href="#"
+          ><h3>Sport<span>News</span></h3></a
+        >
+
+        <p class="footer-company-name">Sport News © 2023</p>
+      </div>
+
+      <div class="footer-center">
+        <div>
+          <i class="ri-map-pin-2-line"></i>
+          <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+        </div>
+
+        <div>
+          <i class="ri-phone-line"></i>
+          <p>+375-29-123-45-67</p>
+        </div>
+
+        <div>
+          <i class="ri-mail-line"></i>
+          <p><a href="mailto:support@company.com">support@gmail.com</a></p>
+        </div>
+      </div>
+
+      <div class="footer-right">
+        <p class="footer-company-about">
+          <span>About the company</span>
+          Sport-News is your partner in accessing fresh sports information so
+          you can stay ahead of the game and enjoy every moment.
+        </p>
+
+        <div class="footer-icons">
+          <a href="https://www.facebook.com"
+            ><i class="ri-facebook-line"></i
+          ></a>
+          <a href="https://twitter.com"><i class="ri-twitter-fill"></i></a>
+          <a href="https://linkedin.com/"><i class="ri-linkedin-line"></i></a>
+          <a href="https://github.com/"><i class="ri-github-fill"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <!--=============== SWIPER JS ===============-->
+    <script src="../js/swiper-bundle.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="../js/index.js"></script>
+
+    <!--=============== FIREBASE JS ===============-->
+    <script type="module" src="../js/firebase.js"></script>
+  </body>
+</html>

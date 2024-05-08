@@ -1,0 +1,564 @@
+/*=============== GOOGLE FONTS ===============*/
+
+@import url("https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,500&family=Montserrat:wght@400;500;600&display=swap");
+
+/*=============== BASE ===============*/
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+input,
+button {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.938rem;
+}
+
+body {
+  background-color: hsl(0, 0%, 70%);
+  color: hsl(230, 70%, 16%);
+  transition: background-color 0.4s;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: hsl(230, 70%, 16%);
+  font-family: "Montagu Slab", serif;
+  font-weight: 500;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+
+.container {
+  max-width: 2100px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding-block: 5rem 1rem;
+}
+
+.section__title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: "Montagu Slab", serif;
+  margin-bottom: 2rem;
+}
+
+.main {
+  overflow: hidden; /* For animation ScrollReveal */
+  flex-grow: 1;
+}
+
+/*=============== HEADER & NAV ===============*/
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #666;
+  z-index: 100;
+  transition: box-shadow 0.4s, background-color 0.4s;
+}
+
+.nav {
+  height: 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
+.nav__logo i {
+  font-size: 1.25rem;
+}
+
+.nav__logo span {
+  color: lightseagreen;
+}
+
+/* Navigation for mobile devices */
+@media screen and (max-width: 1150px) {
+  .nav__menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #666;
+    box-shadow: 0 -8px 32px hsla(0, 0%, 0%, 0.1);
+    padding: 1.25rem 4rem;
+    transition: background-color 0.4s;
+  }
+}
+
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__link {
+  color: #fff;
+  transition: color 0.4s;
+}
+
+.nav__link span {
+  display: none;
+}
+
+.nav__link i {
+  font-size: 1.25rem;
+}
+
+.nav__link:hover {
+  color: lightseagreen;
+}
+
+.nav__actions {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.nav__actions {
+  font-size: 1.25rem;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.4s;
+}
+
+.nav__actions:hover {
+  color: lightseagreen;
+}
+
+/* Add shadow header */
+
+.shadow-header {
+  box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.5);
+}
+
+/*=============== LOGIN ===============*/
+
+.login {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  background-color: hsla(230, 12%, 96%, 0.6);
+  backdrop-filter: blur(16px);
+  align-items: center;
+  padding: 1.5rem;
+  text-align: center;
+  transition: top 0.4s;
+}
+
+.login__form {
+  background: #fff;
+  padding: 2rem 1.5rem;
+  width: 90%;
+  position: absolute;
+  max-width: 450px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.login__title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem;
+  color: #3c30ff;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.login__title::after {
+  content: "";
+  width: 30px;
+  height: 4px;
+  border-radius: 3px;
+  background: #3c30ff;
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.login__group {
+  row-gap: 1.25rem;
+}
+
+.input__field {
+  align-items: center;
+  display: flex;
+  overflow: hidden;
+  max-height: 60px;
+  border-radius: 100px;
+  margin: 15px 0;
+  background: #eaeaea;
+  transition: max-height 0.5s;
+}
+
+.input__field i {
+  margin-left: 15px;
+  color: #999;
+}
+
+.input__field__username {
+  align-items: center;
+  display: flex;
+  overflow: hidden;
+  max-height: 0;
+  border-radius: 100px;
+  margin: 15px 0;
+  background: #eaeaea;
+  transition: max-height 0.5s;
+}
+
+.input__field__username i {
+  margin-left: 15px;
+  color: #999;
+}
+
+.login__input {
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  padding: 18px 15px;
+  color: hsl(230, 16%, 45%);
+}
+
+.login__forgot {
+  display: block;
+  font-size: 0.813rem;
+  color: #555;
+  margin-bottom: 1.25rem;
+}
+
+p.login__option {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 0.938rem;
+  color: #555;
+}
+
+.registration__buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.registration__buttons button {
+  flex-basis: 48%;
+  cursor: pointer;
+  background: #6c63ff;
+  color: #fff;
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  border-radius: 20px;
+  transition: box-shadow 0.4s, background 1s;
+}
+
+.registration__buttons button:hover {
+  background: #3c30ff;
+}
+
+.registration__buttons button.signup__button {
+  flex-basis: 48%;
+  cursor: pointer;
+  background: #eaeaea;
+  color: #555;
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  border-radius: 20px;
+  transition: background 1s;
+}
+
+.login__close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2rem;
+  color: hsl(230, 70%, 16%);
+  cursor: pointer;
+}
+
+/* Active valid user */
+
+.login_user_container {
+  display: none;
+  align-items: center;
+}
+
+/* Show login */
+
+.show-login {
+  top: 0;
+}
+
+/*=============== BUTTON ===============*/
+
+.button {
+  display: inline-block;
+  background-color: hsl(230, 62%, 56%);
+  color: hsl(0, 0%, 100%);
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  transition: box-shadow 0.4s;
+}
+
+.button:hover {
+  box-shadow: 0 4px 32px hsla(230, 72%, 32%, 0.4);
+}
+
+/*=============== FOOTER ===============*/
+
+.footer-distributed {
+  background: #666;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: bold 16px sans-serif;
+  padding: 55px 50px;
+  margin-top: 5rem;
+  flex-shrink: 0;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left {
+  width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3 {
+  color: #ffffff;
+  font: normal 36px sans-serif;
+  margin: 0;
+}
+
+.footer-distributed h3 span {
+  color: lightseagreen;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-company-name {
+  margin-top: 3%;
+  color: #222;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center {
+  width: 35%;
+}
+
+.footer-distributed .footer-center i {
+  color: #ffffff;
+  font-size: 20px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  margin: 10px 15px;
+  vertical-align: middle;
+}
+
+.footer-distributed .footer-center p {
+  display: inline-block;
+  color: #ffffff;
+  font-weight: 400;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.footer-distributed .footer-center p span {
+  display: block;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.footer-distributed .footer-center p a {
+  color: lightseagreen;
+  text-decoration: none;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right {
+  width: 20%;
+}
+
+.footer-distributed .footer-company-about {
+  line-height: 20px;
+  color: #92999f;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer-distributed .footer-company-about span {
+  display: block;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons {
+  margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color: #33383b;
+  border-radius: 2px;
+
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+
+/*=============== BREAKPOINTS ===============*/
+
+@media (max-width: 880px) {
+  .footer-distributed {
+    font: bold 14px sans-serif;
+  }
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right {
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .footer-distributed .footer-center i {
+    margin-left: 0;
+  }
+}
+
+/* For large devices */
+
+@media screen and (min-width: 1150px) {
+  .section {
+    padding-block: 7rem 2rem;
+  }
+
+  .nav {
+    height: calc(3.5rem + 2rem);
+    column-gap: 4rem;
+  }
+
+  .nav__link i {
+    display: none;
+  }
+
+  .nav__link span {
+    display: block;
+  }
+
+  .nav__menu {
+    width: initial;
+    margin-inline: auto 0;
+  }
+
+  .nav__list {
+    column-gap: 4rem;
+  }
+
+  .nav__link {
+    font-weight: 500;
+  }
+}
+
+@media screen and (min-width: 1220px) {
+  .container {
+    margin-block: auto;
+  }
+
+  .login__form {
+    width: 400px;
+    justify-self: center;
+  }
+}
+
+.cards__container {
+  margin-top: 7rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: rgb(35, 187, 217);
+}
