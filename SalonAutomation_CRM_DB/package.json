@@ -1,0 +1,15 @@
+{
+  "name": "cosmetology-salon",
+  "version": "1.0.0",
+  "description": "Веб-приложение для работы с документами салона красоты",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "sqlite3": "^5.0.0"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Документы Косметического Салона</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <h1>Косметический салон - Управление документами</h1>
+
+    <div id="document-types">
+        <button onclick="showDocuments('справочные')">Справочные документы</button>
+        <button onclick="showDocuments('оперативные')">Оперативные документы</button>
+        <button onclick="showDocuments('отчетные')">Отчетные документы</button>
+    </div>
+
+    <div id="documents-list"></div>
+    <div id="table-container"></div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
